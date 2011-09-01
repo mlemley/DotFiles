@@ -1,0 +1,18 @@
+
+    /**
+     *  Storage of the %propertyName% Property
+     */
+    private var _%propertyName%:%propertyType%;
+
+    /**
+     * TODO: define property
+     */
+    public function get %propertyName%():%propertyType%
+    {
+        return _%propertyName%;
+    }
+
+    public function set %propertyName%(value:%propertyType%):void
+    {
+        _%propertyName% = value;
+    }

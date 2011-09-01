@@ -1,0 +1,42 @@
+package
+{
+
+import agi.app.createx.model.Proxy;
+import .interfaces.I
+
+public class  extends Proxy
+{
+
+    //---------------------------------------------------
+    //
+    //  Class Constants
+    //
+    //---------------------------------------------------
+
+    public static const NAME:String = '';
+
+    //---------------------------------------------------
+    //
+    //  Constructor
+    //
+    //---------------------------------------------------
+
+    public function (model:I):void
+    {
+        super(NAME);
+        setData(model);
+    }
+
+    //---------------------------------------------------
+    //
+    //  Properties
+    //
+    //---------------------------------------------------
+
+    protected function get model():I
+    {
+        return I(data);
+    }
+}
+
+}

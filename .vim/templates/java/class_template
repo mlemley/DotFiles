@@ -1,0 +1,7 @@
+package __package__;
+
+public class __name__ {
+    public __name__() {
+        super();
+    }
+}

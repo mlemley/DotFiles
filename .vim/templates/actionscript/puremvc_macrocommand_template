@@ -1,0 +1,23 @@
+package __package__
+{
+
+import org.puremvc.as3.multicore.patterns.command.MacroCommand;
+
+public class __name__ extends MacroCommand
+{
+    /**
+     * @inheritDoc
+     */
+    override protected function initializeMacroCommand():void
+    {
+       /**
+           NOTE: Proper Usage
+       addSubCommand(SomeCommand);
+       addSubCommand(SomeOtherCommand);
+       ...
+       ...
+       */
+    }
+}
+
+}

@@ -1,0 +1,6 @@
+package __package__
+{
+
+public namespace __name__ =
+	"http://www.%DOMAIN%/%YEAR%/__prefix__/__namespace__";
+}

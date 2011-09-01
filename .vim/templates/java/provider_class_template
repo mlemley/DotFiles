@@ -1,0 +1,56 @@
+package __package__;
+
+import android.content.ContentProvider;
+import android.content.ContentValues;
+import android.database.Cursor;
+//TODO: remove MatrixCursor import once imlemented
+import android.database.MatrixCursor;
+import android.net.Uri;
+import android.util.Log;
+
+public class __name__ extends ContentProvider {
+
+    public static final String sTag = "__name__";
+    public static final String HOST_NAME_AUTHORITY = "__package__";
+
+    @Override
+    public int delete(Uri uri, String selection, String[] selectionArgs) {
+        Log.e(sTag, "Need to implement " + sTag + "::delete");
+        return 0;
+    }
+
+    @Override
+    public String getType(Uri uri) {
+        Log.e(sTag, "Need to implement " + sTag + "::getType");
+        return "";
+    }
+
+    @Override
+    public Uri insert(Uri uri, ContentValues values) {
+        Log.e(sTag, "Need to implement " + sTag + "::insert");
+        return Uri.parse(HOST_NAME_AUTHORITY);
+    }
+
+    /**
+     * @return true if provider was successfully loaded, false otherwise
+     */
+    @Override
+    public boolean onCreate() {
+        Log.e(sTag, "Need to implement " + sTag + "::onCreate");
+        return true;
+    }
+
+    @Override
+    public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+        Log.e(sTag, "Need to implement " + sTag + "::query");
+        MatrixCursor cursor = new MatrixCursor(new String[]{"hostname_id", "status", "scheduled_date", "isTransacting"});
+        return cursor;
+    }
+
+    @Override
+    public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
+        Log.e(sTag, "Need to implement " + sTag + "::update");
+        return 0;
+    }
+
+}

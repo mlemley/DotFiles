@@ -1,0 +1,9 @@
+package __package__
+{
+
+public function __name__():__typecast__
+{
+    //TODO: definefunction
+}
+
+}

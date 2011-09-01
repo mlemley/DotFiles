@@ -1,0 +1,23 @@
+package __package__
+{
+
+import org.puremvc.as3.multicore.interfaces.INotification;
+import org.puremvc.as3.multicore.patterns.command.SimpleCommand;
+
+public class __name__ extends SimpleCommand
+{
+
+    //--------------------------------------------------------------------------
+    //
+    //  Overridden methods
+    //
+    //--------------------------------------------------------------------------
+
+    override public function execute(notification:INotification):void
+    {
+        //TODO: define command
+    }
+
+}
+
+}

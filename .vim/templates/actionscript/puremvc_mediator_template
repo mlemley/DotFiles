@@ -1,0 +1,95 @@
+package __package__
+{
+
+import mx.core.UIComponent;
+
+import org.puremvc.as3.multicore.interfaces.INotification;
+import org.puremvc.as3.multicore.patterns.mediator.Mediator;
+
+public class __name__ extends Mediator
+{
+    //----------------------------------------------------------
+    //
+    //  Public Class Members
+    //
+    //----------------------------------------------------------
+
+    public static const NAME:String = "__name__";
+
+    //----------------------------------------------------------
+    //
+    //  Constructor
+    //
+    //----------------------------------------------------------
+
+    /**
+     *  @Param object that will be Mediated
+     *  @Public
+     */
+    public function __name__(view:UIComponent):void
+    {
+        super(NAME, view);
+    }
+
+    //----------------------------------------------------------
+    //
+    //  Properties
+    //
+    //----------------------------------------------------------
+
+    /**
+     *  returns UIComponent that is being Mediated
+     *  @Public
+     */
+    public function get view():UIComponent
+    {
+        return viewComponent as UIComponent;
+    }
+
+    //----------------------------------------------------------
+    //
+    //  Overriden Public Methods
+    //
+    //----------------------------------------------------------
+
+    /**
+     *  @inheritDoc
+     */
+    override public function listNotificationInterests():Array
+    {
+        return [
+        ];
+    }
+
+    /**
+     *  @inheritDoc
+     */
+    override public function handleNotification(notification:INotification):void
+    {
+        /**
+            ** Proper Usage, use if = 1
+               use switch if >= 2
+        if (notification.getName() == SomeNotificationConstant)
+            handleSomeNotification(notification.getBody() as SomeType)
+        */
+    }
+
+    /**
+     *  @inheritDoc
+     */
+    override public function onRegister():void
+    {
+        //TODO: setup actions go here
+    }
+
+    /**
+     *  @inheritDoc
+     */
+    override public function onRemove():void
+    {
+        //TODO: teardown actions go here (inverse of onRegister)
+    }
+
+}
+
+}

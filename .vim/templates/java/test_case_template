@@ -1,0 +1,33 @@
+package __package__;
+
+//TODO: remove if not using Robolectric
+import com.xtremelabs.robolectric.Robolectric;
+import com.xtremelabs.robolectric.RobolectricTestRunner;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+
+import static org.junit.Assert.assertThat;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+//TODO: remove if not using Roboletric
+import org.junit.runner.RunWith;
+
+import static org.mockito.Mockito.*;
+
+//TODO: remove if not using Roboletric
+//@RunWith(RobolectricTestRunner.class)
+public class __name__ {
+
+    @Before
+    public void setup() {
+        //TODO: implement
+    }
+
+    @After
+    public void tearDown() {
+        //TODO: implement
+    }
+}

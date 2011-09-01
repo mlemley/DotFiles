@@ -1,0 +1,42 @@
+package __package__
+{
+
+import org.puremvc.as3.multicore.patterns.proxy.Proxy;
+import __package__.interfaces.__model_interface__
+
+public class __name__ extends Proxy
+{
+
+    //---------------------------------------------------
+    //
+    //  Class Constants
+    //
+    //---------------------------------------------------
+
+    public static const NAME:String = '__name__';
+
+    //---------------------------------------------------
+    //
+    //  Constructor
+    //
+    //---------------------------------------------------
+
+    public function (model:__model_interface__):void
+    {
+        super(NAME);
+        setData(model);
+    }
+
+    //---------------------------------------------------
+    //
+    //  Properties
+    //
+    //---------------------------------------------------
+
+    protected function get model():__model_interface__
+    {
+        return __model_interface__(data);
+    }
+}
+
+}
