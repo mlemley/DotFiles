@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+    <!-- Output directories -->
+    <property name="out.dir" value="bin" />
+    <property name="out.absolute.dir" location="${out.dir}" />
+    <property name="out.debug.package" location="${out.absolute.dir}/${ant.project.name}-debug.apk" />
+
+    <!-- This is macro used only for sharing code among two targets, -install and
+         -install-with-emma which do exactly the same but differ in dependencies -->
+    <macrodef name="android-install-helper">
+        <sequential>
+            <echo>Installing ${out.debug.package} onto all emulators and devices...</echo>
+            <exec executable="installer/android_installer.py" failonerror="true">
+                <arg path="${out.debug.package}" />
+            </exec>
+        </sequential>
+    </macrodef>
+    <target name="install" depends="debug"
+                description="Installs/reinstalls the debug package onto all running
+                            emulators and devices. If the application was previously installed,
+                            the signatures must match." >
+        <android-install-helper />
+    </target>
+</project>
