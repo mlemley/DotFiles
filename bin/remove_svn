@@ -1,0 +1,38 @@
+#!/usr/bin/python
+"""
+    Removes all .svn files from given path
+"""
+import os
+import sys
+
+def remove_all_files(path):
+    for child in os.listdir(path):
+        childpath = os.path.join(path, child)
+        if os.path.isdir(childpath):
+            remove_all_files(childpath)
+            try:
+                os.rmdir(childpath)
+            except OSError, error:
+                pass
+        else:
+            os.remove(childpath)
+    os.rmdir(path)
+
+def remove_svn_references(path):
+    for child in os.listdir(path):
+        childpath = os.path.join(path, child)
+        if child == ".svn":
+            print "** removing ", childpath
+            remove_all_files(childpath)
+        elif os.path.isdir(childpath):
+            remove_svn_references(childpath)
+
+if __name__ == "__main__":
+    if len(sys.argv) == 1:
+        print "* missing required path"
+
+    path = sys.argv[1]
+    if not os.path.exists(path):
+        print "* supplied path does not exist"
+
+    remove_svn_references(path)

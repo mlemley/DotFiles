@@ -1,0 +1,16 @@
+#!/usr/bin/python
+#vim filetype=python
+
+import sys
+import commands
+
+if __name__  == "__main__":
+    if len(sys.argv) == 1:
+        print "**please supply a title"
+        sys.exit(1)
+
+    title = " ".join(sys.argv[1:])
+    print "setting title to: ", title
+    status, output = commands.getstatusoutput("printf '\033]2;%s\007' \"%s\"" % ("%s", title))
+    print output
+    sys.exit(status)
