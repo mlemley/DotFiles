@@ -41,6 +41,11 @@ mvn() {
 ulimit -S -n 1024
 
 ##
+# Ruby
+export RUBY_VERSION=1.9.2
+export PATH=$PATH:$HOME/.gem/ruby/$RUBY_VERSION/bin
+
+##
 # HOME BIN
 export PATH=$PATH:$HOME/bin:/usr/local/mysql/bin
 
@@ -55,7 +60,8 @@ alias droidX2="emulator -avd DroidX2 -scale .7&"
 export SVN_EDITOR=vim
 
 setprompt() {
-    PS1="\n\[\e[1;37;29m\][\u@\h[0m[1;37m] \w \[\e[0m\]\n\$ "
+    #PS1="\n\[\e[1;37;29m\][\u@\h[0m[1;37m] \w \[\e[0m\]\n\$ "
+    source $HOME/.bash_dont_think.sh
 }
 
 #export default env vars.
@@ -68,3 +74,5 @@ if [ -f $HOME/.Xdefaults ]; then
   xrdb -merge $HOME/.Xdefaults
   export TERM=xterm-256color
 fi
+
+[[ -s "/Users/mlemley/.rvm/scripts/rvm" ]] && source "/Users/mlemley/.rvm/scripts/rvm"  # This loads RVM into a shell session.
