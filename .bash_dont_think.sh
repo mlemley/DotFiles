@@ -1,5 +1,11 @@
 _bold=$(tput bold)
 _normal=$(tput sgr0)
+_red=$(tput setaf 1)
+_green=$(tput setaf 2;)
+#Y=$(tput setaf 3;)
+#P=`tput setaf 5;`
+_B=$(tput setaf 6)
+#_BB=`tput setaf 6; tput bold`
 
 __prompt_command() {
     local vcs base_dir sub_dir ref last_command
@@ -67,9 +73,9 @@ __prompt_command() {
         alias up="pull"
         alias cdb="cd $base_dir"
         base_dir="$(basename "${base_dir}")"
-    working_on="$base_dir:"
-        __vcs_prefix="($vcs)"
-        __vcs_ref="[$ref]"
+        working_on="$base_dir:"
+        __vcs_prefix="(${_green}$vcs${_normal})"
+        __vcs_ref="[${_red}${_bold}$ref${_normal}]"
         __vcs_sub_dir="${sub_dir}"
         __vcs_base_dir="${base_dir/$HOME/~}"
     else
@@ -77,7 +83,7 @@ __prompt_command() {
         __vcs_base_dir="${PWD/$HOME/~}"
         __vcs_ref=''
         __vcs_sub_dir=''
-    working_on=""
+        working_on=""
     fi
 
     last_command=$(history 1 | sed -e "s/^[ ]*[0-9]*[ ]*//g")

@@ -67,9 +67,18 @@ au BufRead,BufNewFile *.mxml set filetype=mxml
 au BufNewFile,BufRead *.pd setlocal filetype=html
 au BufNewFile,BufRead *.pd map <F6> :sp %<.py<CR>
 au BufRead,BufNewFile *.java set filetype=java
+au BufRead,BufNewFile *.feature call SetupTwoSpacedTabs()
+au BufRead,BufNewFile *.rb call SetupTwoSpacedTabs()
+au BufRead,BufNewFile *.js call SetupTwoSpacedTabs()
 
 "" auto complete block closure and set cursor inside indented in
 inoremap {<CR> {<CR>}<C-O>O<TAB>
+
+function! SetupTwoSpacedTabs()
+    set hardtabs=2
+    set tabstop=2
+    set shiftwidth=2
+endfunction
 
 function! GreenBar(message)
     hi GreenBar ctermfg=white ctermbg=green guibg=green

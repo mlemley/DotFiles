@@ -53,7 +53,6 @@ export PATH=$PATH:$HOME/bin:/usr/local/mysql/bin
 #   Android Development
 export ANDROID_HOME="/opt/android"
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-alias droidX2="emulator -avd DroidX2 -scale .7&"
 
 ##
 #   SVN
@@ -76,3 +75,13 @@ if [ -f $HOME/.Xdefaults ]; then
 fi
 
 [[ -s "/Users/mlemley/.rvm/scripts/rvm" ]] && source "/Users/mlemley/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+
+export PATH=$PATH:$HOME/homebrew/bin
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+
+if [ -f $(brew --prefix)/etc/profile.d/z.sh ]; then
+    . `brew --prefix`/etc/profile.d/z.sh
+fi
