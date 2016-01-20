@@ -68,6 +68,8 @@ export CFLAGS='-Wall -pedantic'
 export CC=`which gcc`
 export EDITOR=`which vim`
 export PROMPT_COMMAND=setprompt
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
 
 if [ -f $HOME/.Xdefaults ]; then
   xrdb -merge $HOME/.Xdefaults
