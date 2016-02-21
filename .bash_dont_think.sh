@@ -63,9 +63,16 @@ __prompt_command() {
         alias push="bzr push"
         alias revert="bzr revert"
     }
-    
 
-    git_dir || svn_dir || bzr_dir
+    venv() {
+        if [ -d ".venv" ]; then
+            source .venv/bin/activate
+        fi
+    }
+
+    git_dir || svn_dir || bzr_dir 
+
+    venv
 
     if [ -n "$vcs" ]; then
         alias st="$vcs status"
