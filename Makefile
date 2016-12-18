@@ -40,3 +40,15 @@ setup:
 		rm ${HOME}/bin; \
 	fi
 	ln -s $(CURDIR)/bin ${HOME}/bin;
+
+
+	if [ -f ${HOME}/.gitconfig ]; then \
+		rm  ${HOME}/.gitconfig; \
+	fi
+	ln -s /Users/mlemley/Development/mlemley/DotFiles/.gitconfig ${HOME}/.gitconfig
+
+	if [ -f ${HOME}/.githelpers ]; then \
+		rm  ${HOME}/.githelpers; \
+	fi
+	$ ln -s /Users/mlemley/Development/mlemley/DotFiles/.githelpers ${HOME}/.githelpers
+

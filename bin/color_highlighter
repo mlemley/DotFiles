@@ -40,6 +40,9 @@ while read line ; do
         *time*|*setup*|*bytes*|*[Mm]emory*|*Finished*|*--[-+$]*|*System.out*)
             echo -n "${B}"
             ;;
+        *[Dd]ebug*|*D/*|*DEBUG*|*apply*|*exec*)
+            echo -n "${B}"
+            ;;
         *INFO*|*I/*|*echo*|*apply*|*exec*)
             echo -n "${P}"
             ;;

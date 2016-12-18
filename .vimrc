@@ -1,5 +1,5 @@
 set t_Co=256
-colorscheme dante
+colorscheme dzo
 set autoindent
 set expandtab
 set hardtabs=4
@@ -17,6 +17,15 @@ set ignorecase
 set hls
 syntax on
 filetype plugin on
+
+let g:airline_theme='dzo'
+let g:airline_symbols = {}
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_left_alt_sep = ''
+let g:airline_right_alt_sep = ''
+set laststatus=2
+set fillchars+=stl:\ ,stlnc:\
 
 call pathogen#infect() 
 
